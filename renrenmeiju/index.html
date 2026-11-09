@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人人美剧电脑版 - 剧集指南与观看导航</title>
+  <meta name="description" content="人人美剧电脑版汇聚美剧电脑端观看入口、热播剧集推荐、分类型剧单与更新动态，提供从悬疑到科幻的追剧指南与深度解析，适合电脑端美剧爱好者高效筛选与访问。">
+  <meta name="keywords" content="美剧电脑观看, 剧集导航, 美剧更新动态, 悬疑美剧, 科幻剧单">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Cpath d='M8 10h16v2H8zm0 5h16v2H8zm0 5h10v2H8z' fill='%23f59e0b'/%3E%3Ccircle cx='24' cy='22' r='3' fill='%23f59e0b'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f2f5;
+      --border: #dce0e5;
+      --text: #1e293b;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --primary: #0f172a;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-hover: #b45309;
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      --max-width: 1360px;
+      --header-height: 60px;
+      --notice-height: 40px;
+      --sticky-offset: calc(var(--header-height) + var(--notice-height));
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--sticky-offset) + 16px);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      padding-top: var(--sticky-offset);
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== Sticky Notice ===== */
+    .notice-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--notice-height);
+      background: var(--primary);
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      z-index: 1030;
+      font-size: 13px;
+    }
+    .notice-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow: hidden;
+    }
+    .notice-bar .badge {
+      background: var(--accent);
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .notice-bar .notice-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .notice-bar .notice-text strong { color: #fbbf24; }
+
+    /* ===== Sticky Header ===== */
+    .site-header {
+      position: fixed;
+      top: var(--notice-height);
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 1020;
+      box-shadow: var(--shadow-sm);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-mark svg { width: 22px; height: 22px; }
+    .brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .header-nav a:hover, .header-nav a:focus-visible {
+      background: var(--surface-alt);
+      color: var(--primary);
+      outline: none;
+    }
+    .header-nav a:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .search-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: background 0.15s;
+    }
+    .search-toggle:hover, .search-toggle:focus-visible {
+      background: var(--surface-alt);
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .search-box-wrap {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      box-shadow: var(--shadow);
+      z-index: 1021;
+    }
+    .search-box-wrap.active { display: block; }
+    .search-box-wrap .container {
+      display: flex;
+      gap: 8px;
+    }
+    .search-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+      color: var(--text);
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .search-close {
+      padding: 10px 16px;
+      background: var(--surface-alt);
+      border-radius: var(--radius);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .search-close:hover { background: var(--border); }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,119,6,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-hover);
+      background: var(--accent-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 24px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover, .btn-primary:focus-visible {
+      background: #1e293b;
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 24px;
+      background: var(--surface-alt);
+      color: var(--text);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .btn-secondary:hover, .btn-secondary:focus-visible {
+      background: var(--border);
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .hero-visual {
+      flex-shrink: 0;
+      width: 280px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-visual svg { width: 100%; height: 100%; }
+
+    /* ===== Layout: Three Column ===== */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 240px;
+      gap: 28px;
+      padding: 32px 0 48px;
+      align-items: start;
+    }
+
+    /* ===== Left Sidebar (Channel Index) ===== */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 16px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .channel-sidebar h2 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 0 16px 10px;
+    }
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .channel-list a:hover, .channel-list a:focus-visible {
+      background: var(--surface-alt);
+      color: var(--primary);
+      border-left-color: var(--accent);
+      outline: none;
+    }
+    .channel-list a:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+
+    /* ===== Main Content ===== */
+    .main-content { min-width: 0; }
+
+    .section {
+      margin-bottom: 40px;
+      scroll-margin-top: calc(var(--sticky-offset) + 16px);
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .section-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-header h2::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-header .more-link {
+      font-size: 13px;
+      color: var(--accent-hover);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .section-header .more-link:hover { text-decoration: underline; }
+
+    .section-intro {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    /* ===== Overview text ===== */
+    .overview-text {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    .overview-text p + p { margin-top: 12px; }
+    .overview-text strong { color: var(--text); font-weight: 600; }
+
+    /* ===== Featured Cards ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .card-img-wrap {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--surface-alt);
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .card:hover .card-img-wrap img { transform: scale(1.04); }
+    .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-type {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-hover);
+      background: var(--accent-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 10px;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .card-tags span {
+      font-size: 11px;
+      color: var(--text-secondary);
+      background: var(--surface-alt);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--surface-alt);
+      padding-top: 10px;
+      margin-top: auto;
+    }
+    .card-meta .heat {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--accent-hover);
+      font-weight: 600;
+    }
+
+    /* ===== Update List ===== */
+    .update-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--surface-alt);
+      transition: background 0.15s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: var(--surface-alt); }
+    .update-time {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      min-width: 72px;
+      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .update-body { flex: 1; min-width: 0; }
+    .update-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .update-summary {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== Category Grid ===== */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .category-item:hover, .category-item:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-light);
+      outline: none;
+    }
+    .category-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .category-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .category-count {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ===== Deep Dive ===== */
+    .deep-dive {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    .deep-dive h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--surface-alt);
+    }
+    .deep-dive h3:first-child { margin-top: 0; }
+    .deep-dive p { margin-bottom: 10px; }
+    .deep-dive ul {
+      margin: 8px 0 14px 20px;
+      list-style: disc;
+    }
+    .deep-dive ul li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+    .deep-dive strong { color: var(--text); font-weight: 600; }
+
+    /* ===== Guide Steps ===== */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .guide-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      position: relative;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .guide-step h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .guide-step p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary { background: var(--surface-alt); }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item summary:hover { background: var(--surface-alt); }
+    .faq-item summary:focus-visible {
+      outline: none;
+      box-shadow: inset 0 0 0 2px var(--accent);
+    }
+    .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ===== Comments ===== */
+    .comments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .comment-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+    }
+    .comment-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+    .comment-body { flex: 1; min-width: 0; }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .comment-nickname {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .comment-date {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .comment-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== News ===== */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .news-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .news-thumb {
+      width: 100px;
+      height: 70px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--surface-alt);
+    }
+    .news-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .news-content { flex: 1; min-width: 0; }
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+    .news-date {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ===== Related Tags ===== */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .related-tags a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .related-tags a:hover, .related-tags a:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent-hover);
+      background: var(--accent-light);
+      outline: none;
+    }
+
+    /* ===== Hot Ranking ===== */
+    .ranking-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--surface-alt);
+      transition: background 0.15s;
+    }
+    .ranking-item:last-child { border-bottom: none; }
+    .ranking-item:hover { background: var(--surface-alt); }
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--surface-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    .ranking-item:nth-child(1) .rank-num { background: #fef3c7; color: #b45309; }
+    .ranking-item:nth-child(2) .rank-num { background: #e2e8f0; color: #475569; }
+    .ranking-item:nth-child(3) .rank-num { background: #fef3c7; color: #b45309; }
+    .rank-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      flex: 1;
+      min-width: 0;
+    }
+    .rank-heat {
+      font-size: 12px;
+      color: var(--accent-hover);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* ===== Right Sidebar ===== */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sidebar-card h3::before {
+      content: '';
+      width: 3px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .sidebar-list {
+      padding: 8px 0;
+    }
+    .sidebar-list li {
+      padding: 0 16px;
+    }
+    .sidebar-list a {
+      display: block;
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-bottom: 1px dashed var(--surface-alt);
+      transition: color 0.15s;
+    }
+    .sidebar-list li:last-child a { border-bottom: none; }
+    .sidebar-list a:hover, .sidebar-list a:focus-visible {
+      color: var(--accent-hover);
+      outline: none;
+    }
+    .sidebar-list a:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+    .sidebar-list .meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 40px 0 24px;
+      margin-top: 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+    .footer-brand .brand-name {
+      color: #f1f5f9;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #94a3b8;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #94a3b8;
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover, .footer-col a:focus-visible {
+      color: #fbbf24;
+      outline: none;
+    }
+    .footer-col a:focus-visible { text-decoration: underline; }
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+    }
+    .footer-bottom .disclaimer {
+      color: #64748b;
+      font-size: 11px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1100px) {
+      .page-layout {
+        grid-template-columns: 170px 1fr;
+      }
+      .right-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 32px; }
+      .hero-visual { width: 200px; height: 150px; }
+      .category-grid { grid-template-columns: repeat(3, 1fr); }
+      .guide-steps { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 740px) {
+      :root {
+        --header-height: 52px;
+        --notice-height: 36px;
+      }
+      .page-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0 32px;
+      }
+      .channel-sidebar {
+        position: static;
+        padding: 8px 0;
+      }
+      .channel-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 0 12px;
+      }
+      .channel-list a {
+        padding: 6px 12px;
+        border-left: none;
+        border-radius: var(--radius-sm);
+        font-size: 12px;
+        background: var(--surface-alt);
+      }
+      .channel-list a:hover, .channel-list a:focus-visible {
+        background: var(--border);
+        border-left-color: transparent;
+      }
+      .hero { padding: 28px 0 24px; }
+      .hero-content { flex-direction: column; gap: 20px; }
+      .hero h1 { font-size: 28px; }
+      .hero-desc { font-size: 14px; }
+      .hero-visual { width: 100%; height: 140px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .guide-steps { grid-template-columns: 1fr; }
+      .news-item { flex-direction: column; gap: 10px; }
+      .news-thumb { width: 100%; height: 140px; }
+      .update-item { flex-direction: column; gap: 4px; }
+      .update-time { min-width: auto; }
+      .header-nav { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+      .deep-dive { padding: 20px 18px; }
+      .overview-text { padding: 18px; }
+      .search-box-wrap { padding: 10px 16px; }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 24px; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== Utility ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    .hidden { display: none !important; }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ===== Sticky Notice Bar ===== -->
+  <div class="notice-bar" role="status" aria-label="站点公告">
+    <div class="container">
+      <span class="badge">今日更新</span>
+      <span class="notice-text">2026-11-08 新增 <strong>《怪奇物语》第五季第 3 集</strong>、<strong>《最后生还者》第二季预告</strong>、<strong>《白莲花度假村》第三季定档</strong> 等 12 条条目</span>
+    </div>
+  </div>
+
+  <!-- ===== Sticky Header ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/#hero" class="brand" aria-label="人人美剧电脑版首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="5" width="18" height="2" rx="1" fill="#f59e0b"/>
+            <rect x="3" y="10" width="18" height="2" rx="1" fill="#f59e0b" opacity="0.7"/>
+            <rect x="3" y="15" width="11" height="2" rx="1" fill="#f59e0b" opacity="0.5"/>
+            <circle cx="19" cy="18" r="2.5" fill="#f59e0b"/>
+          </svg>
+        </span>
+        <span class="brand-name">人人美剧电脑版</span>
+      </a>
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="/#featured">精选剧集</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">剧迷评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="打开搜索" aria-expanded="false" id="searchToggle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="search-box-wrap" id="searchBoxWrap">
+      <div class="container">
+        <input type="search" class="search-input" id="searchInput" placeholder="搜索剧集、类型或关键词…" aria-label="搜索剧集内容">
+        <button class="search-close" id="searchClose">关闭</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          电脑端美剧观看导航
+        </span>
+        <h1>人人美剧电脑版</h1>
+        <p class="hero-desc">汇聚美剧电脑端观看入口、热播剧集推荐、分类型剧单与更新动态。覆盖悬疑、科幻、犯罪、喜剧、奇幻、剧情六大类型，提供从《怪奇物语》到《最后生还者》的追剧指南与条目对比，适合电脑端美剧爱好者高效筛选与访问。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">
+            浏览精选剧集
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="/#updates" class="btn-secondary">查看今日更新</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="240" height="140" rx="12" fill="#f0f2f5" stroke="#dce0e5" stroke-width="1.5"/>
+          <rect x="20" y="30" width="240" height="32" rx="12" fill="#0f172a"/>
+          <circle cx="38" cy="46" r="4" fill="#f59e0b"/>
+          <circle cx="52" cy="46" r="4" fill="#475569"/>
+          <circle cx="66" cy="46" r="4" fill="#475569"/>
+          <rect x="36" y="78" width="60" height="8" rx="4" fill="#dce0e5"/>
+          <rect x="36" y="94" width="90" height="6" rx="3" fill="#e9ecef"/>
+          <rect x="36" y="108" width="72" height="6" rx="3" fill="#e9ecef"/>
+          <rect x="36" y="128" width="100" height="24" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+          <rect x="150" y="78" width="94" height="58" rx="8" fill="#e2e8f0"/>
+          <rect x="158" y="86" width="78" height="4" rx="2" fill="#cbd5e1"/>
+          <rect x="158" y="96" width="60" height="4" rx="2" fill="#cbd5e1"/>
+          <rect x="158" y="106" width="70" height="4" rx="2" fill="#cbd5e1"/>
+          <rect x="150" y="146" width="94" height="6" rx="3" fill="#e9ecef"/>
+          <rect x="20" y="168" width="240" height="2" rx="1" fill="#e9ecef"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Page Layout: Three Columns ===== -->
+  <div class="container">
+    <div class="page-layout">
+
+      <!-- ===== Left Sidebar: Channel Index ===== -->
+      <aside class="channel-sidebar" aria-label="频道索引">
+        <h2>频道索引</h2>
+        <nav class="channel-list">
+          <a href="/#featured">悬疑美剧</a>
+          <a href="/#featured">科幻美剧</a>
+          <a href="/#featured">犯罪剧集</a>
+          <a href="/#featured">喜剧美剧</a>
+          <a href="/#featured">奇幻剧集</a>
+          <a href="/#featured">剧情美剧</a>
+          <a href="/#featured">限定剧</a>
+          <a href="/#featured">动画美剧</a>
+          <a href="/#updates">更新动态</a>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#guide">观看指南</a>
+          <a href="/#comments">剧迷评论</a>
+        </nav>
+      </aside>
+
+      <!-- ===== Main Content ===== -->
+      <main class="main-content">
+
+        <!-- ===== 1. 主题领域概览 ===== -->
+        <section class="section" id="overview">
+          <div class="section-header">
+            <h2>美剧电脑端观看概览</h2>
+          </div>
+          <div class="overview-text">
+            <p><strong>人人美剧电脑版</strong>所指向的领域，是电脑端美剧内容的聚合与导航。当前美剧在电脑端的观看方式主要分为三类：流媒体平台直接订阅、聚合类站点导航、以及社区驱动的资源索引。从内容方向看，2026 年秋季档的核心品类集中在<strong>悬疑推理</strong>（《大楼里只有谋杀》第五季、《扑克脸》第二季）、<strong>科幻史诗</strong>（《怪奇物语》第五季、《沙丘：预言》）、<strong>犯罪纪实改编</strong>（《怪物：梅内德斯兄弟》续作）以及<strong>奇幻大制作</strong>（《指环王：力量之戒》第三季）。</p>
+            <p>电脑端观看的优势在于大屏沉浸感与多任务并行——可以一边播放正片一边查阅剧集资料、对照时间线或参与社区讨论。因此，电脑端用户对<strong>条目信息完整度</strong>（季集数、播出时间、平台归属）和<strong>类型筛选效率</strong>的需求高于移动端。本页围绕这一场景，整理了可搜索的具体剧集条目、类型标签、更新节奏与观看顺序建议。</p>
+            <p>值得关注的具体方向包括：<strong>限定剧</strong>的崛起（单季完结、低投入门槛）、<strong>IP 衍生剧</strong>的密集上线（如《黄石》宇宙、《行尸走肉》衍生），以及<strong>非英语剧集</strong>在美剧生态中的占比提升（《鱿鱼游戏》第二季、《柏林》第二季）。这些变化直接影响电脑端用户的选择策略——先看类型、再看集数、最后对比平台可用性。</p>
+          </div>
+        </section>
+
+        <!-- ===== 2. 精选内容推荐 ===== -->
+        <section class="section" id="featured">
+          <div class="section-header">
+            <h2>精选美剧推荐</h2>
+            <a href="/#updates" class="more-link">查看全部更新 →</a>
+          </div>
+          <p class="section-intro">按类型覆盖当前电脑端热度较高的具体条目，每条标注播出平台、类型与看点摘要。</p>
+          <div class="card-grid" id="featuredGrid">
+
+            <article class="card" data-title="怪奇物语 第五季">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/stranger-things-s5/400/300" alt="怪奇物语第五季剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="card-type">科幻 / 恐怖</span>
+                <h3 class="card-title">怪奇物语 第五季</h3>
+                <p class="card-desc">最终季，1987 年霍金斯小镇决战。前 3 集已于 11 月 7 日上线，单集时长超 75 分钟。适合从第一季连续追看的观众。</p>
+                <div class="card-tags"><span>Netflix</span><span>最终季</span><span>80 年代</span></div>
+                <div class="card-meta"><span class="heat">🔥 热度 9860</span><span>更新至第 3 集</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="最后生还者 第二季">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/tlou-s2/400/300" alt="最后生还者第二季剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="card-type">剧情 / 末日</span>
+                <h3 class="card-title">最后生还者 第二季</h3>
+                <p class="card-desc">改编自游戏第二部，艾莉与艾比的视角双线展开。首支正式预告于 11 月 6 日发布，确认 2027 年春季档。</p>
+                <div class="card-tags"><span>HBO</span><span>游戏改编</span><span>末日生存</span></div>
+                <div class="card-meta"><span class="heat">🔥 热度 9420</span><span>预告已发布</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="大楼里只有谋杀 第五季">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/omonly-murders-s5/400/300" alt="大楼里只有谋杀第五季剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="card-type">悬疑 / 喜剧</span>
+                <h3 class="card-title">大楼里只有谋杀 第五季</h3>
+                <p class="card-desc">三人组搬到纽约后卷入百老汇后台命案。本季新增两位常驻角色，前 4 集已于 10 月 28 日上线。</p>
+                <div class="card-tags"><span>Hulu</span><span>推理</span><span>纽约</span></div>
+                <div class="card-meta"><span class="heat">🔥 热度 8930</span><span>更新至第 4 集</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="白莲花度假村 第三季">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/white-lotus-s3/400/300" alt="白莲花度假村第三季剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="card-type">剧情 / 讽刺</span>
+                <h3 class="card-title">白莲花度假村 第三季</h3>
+                <p class="card-desc">泰国苏梅岛取景，聚焦灵修与阶级冲突。HBO 确认 2026 年 12 月 1 日首播，共 8 集。</p>
+                <div class="card-tags"><span>HBO</span><span>讽刺喜剧</span><span>东南亚</span></div>
+                <div class="card-meta"><span class="heat">🔥 热度 8710</span><span>12 月 1 日首播</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="扑克脸 第二季">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/poker-face-s2/400/300" alt="扑克脸第二季剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="card-type">悬疑 / 公路</span>
+                <h3 class="card-title">扑克脸 第二季</h3>
+                <p class="card-desc">查理继续驾车穿越美国，每集独立案件。第二季共 10 集，已于 11 月 1 日全部上线，适合单集入坑。</p>
+                <div class="card-tags"><span>Peacock</span><span>单元剧</span><span>公路悬疑</span></div>
+                <div class="card-meta"><span class="heat">🔥 热度 8340</span><span>全季已上线</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="沙丘：预言">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/dune-prophecy/400/300" alt="沙丘预言剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <span class="card-type">科幻 / 史诗</span>
+                <h3 class="card-title">沙丘：预言</h3>
+                <p class="card-desc">《沙丘》电影前传，讲述贝尼·杰瑟里特姐妹会的起源。首季 6 集，11 月 3 日上线第 2 集，视觉风格延续电影版。</p>
+                <div class="card-tags"><span>HBO Max</span><span>前传</span><span>姐妹会</span></div>
+                <div class="card-meta"><span class="heat">🔥 热度 8120</span><span>更新至第 2 集</span></div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ===== 3. 最新更新 / 热播 ===== -->
+        <section class="section" id="updates">
+          <div class="section-header">
+            <h2>今日更新与热播动态</h2>
+          </div>
+          <p class="section-intro">2026 年 11 月 8 日当天及前 7 日内的具体条目更新、定档与预告信息。</p>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="update-time">今天 09:30</span>
+              <div class="update-body">
+                <div class="update-name">《怪奇物语 第五季》第 3 集上线</div>
+                <div class="update-summary">“Chapter Three: The Turnbow Trap” 已可在 Netflix 观看，单集 78 分钟，达斯汀与史蒂夫线出现关键转折。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">今天 08:15</span>
+              <div class="update-body">
+                <div class="update-name">《最后生还者 第二季》正式预告发布</div>
+                <div class="update-summary">HBO 放出 2 分 40 秒预告，确认 2027 年春季档，艾比选角首次曝光，乔尔戏份以回忆形式呈现。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">昨天 21:10</span>
+              <div class="update-body">
+                <div class="update-name">《白莲花度假村 第三季》定档 12 月 1 日</div>
+                <div class="update-summary">HBO 公布首播日期与 8 集标题列表，首集名为 “Arrivals”，泰国苏梅岛四季酒店为取景地。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">昨天 18:40</span>
+              <div class="update-body">
+                <div class="update-name">《扑克脸 第二季》全季上线</div>
+                <div class="update-summary">Peacock 一次性放出 10 集，本季客串阵容包括辛西娅·埃里沃与约翰·木兰尼，单元案件仍以倒叙展开。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 7 日</span>
+              <div class="update-body">
+                <div class="update-name">《沙丘：预言》第 2 集上线</div>
+                <div class="update-summary">HBO Max 更新 “The Sisterhood”，聚焦瓦拉赫九号星的政治联姻，片尾出现沙虫幼体镜头。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 6 日</span>
+              <div class="update-body">
+                <div class="update-name">《大楼里只有谋杀 第五季》第 4 集上线</div>
+                <div class="update-summary">Hulu 更新 “The Stunt Double”，百老汇后台命案出现第二具尸体，梅丽尔·斯特里普客串登场。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 5 日</span>
+              <div class="update-body">
+                <div class="update-name">《黄石》第五季下半部确认 11 月 10 日回归</div>
+                <div class="update-summary">Paramount Network 发布 30 秒预告，约翰·达顿的结局走向成为社区讨论焦点，共 6 集。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 4 日</span>
+              <div class="update-body">
+                <div class="update-name">《鱿鱼游戏 第二季》发布角色海报</div>
+                <div class="update-summary">Netflix 公布 12 张角色海报，李政宰饰演的成奇勋以红发造型回归，12 月 26 日全集上线。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 3 日</span>
+              <div class="update-body">
+                <div class="update-name">《指环王：力量之戒 第三季》开机</div>
+                <div class="update-summary">Amazon Prime Video 确认第三季在英国开拍，索伦的形态变化与努门诺尔陷落为主线。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-time">11 月 2 日</span>
+              <div class="update-body">
+                <div class="update-name">《怪物：梅内德斯兄弟》续作公布标题</div>
+                <div class="update-summary">Netflix 宣布第三季聚焦“艾德·盖恩”，瑞恩·墨菲继续担任制片，2027 年上线。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 4. 分类入口 ===== -->
+        <section class="section" id="categories">
+          <div class="section-header">
+            <h2>按类型浏览剧集</h2>
+          </div>
+          <p class="section-intro">点击分类可定位到精选推荐区域，同时按类型筛选卡片内容。</p>
+          <div class="category-grid" id="categoryGrid">
+            <button class="category-item" data-filter="悬疑" type="button">
+              <span class="category-icon" aria-hidden="true">🔍</span>
+              <span class="category-name">悬疑推理</span>
+              <span class="category-count">《扑克脸》《大楼里只有谋杀》</span>
+            </button>
+            <button class="category-item" data-filter="科幻" type="button">
+              <span class="category-icon" aria-hidden="true">🚀</span>
+              <span class="category-name">科幻史诗</span>
+              <span class="category-count">《怪奇物语》《沙丘：预言》</span>
+            </button>
+            <button class="category-item" data-filter="犯罪" type="button">
+              <span class="category-icon" aria-hidden="true">🕵️</span>
+              <span class="category-name">犯罪纪实</span>
+              <span class="category-count">《怪物》系列、《黄石》</span>
+            </button>
+            <button class="category-item" data-filter="喜剧" type="button">
+              <span class="category-icon" aria-hidden="true">😄</span>
+              <span class="category-name">喜剧轻喜</span>
+              <span class="category-count">《熊家餐馆》《绝望写手》</span>
+            </button>
+            <button class="category-item" data-filter="奇幻" type="button">
+              <span class="category-icon" aria-hidden="true">🐉</span>
+              <span class="category-name">奇幻大制作</span>
+              <span class="category-count">《指环王：力量之戒》</span>
+            </button>
+            <button class="category-item" data-filter="剧情" type="button">
+              <span class="category-icon" aria-hidden="true">🎭</span>
+              <span class="category-name">剧情正剧</span>
+              <span class="category-count">《白莲花度假村》《继承之战》</span>
+            </button>
+            <button class="category-item" data-filter="限定剧" type="button">
+              <span class="category-icon" aria-hidden="true">📺</span>
+              <span class="category-name">限定剧</span>
+              <span class="category-count">《驯鹿宝贝》《小丑回魂》</span>
+            </button>
+            <button class="category-item" data-filter="动画" type="button">
+              <span class="category-icon" aria-hidden="true">🎨</span>
+              <span class="category-name">动画美剧</span>
+              <span class="category-count">《瑞克和莫蒂》《蓝眼武士》</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== 5. 深度解析正文 ===== -->
+        <section class="section" id="deep-dive">
+          <div class="section-header">
+            <h2>深度解析：电脑端美剧的类型差异与选择逻辑</h2>
+          </div>
+          <div class="deep-dive">
+            <h3>悬疑推理剧的两种结构：单元剧与连续剧</h3>
+            <p>在电脑端观看悬疑类美剧时，最先需要区分的是<strong>单元剧</strong>与<strong>连续剧</strong>两种结构。《扑克脸》第二季是典型的单元剧——每集一个独立案件，主角查理作为串联线索，观众可以从任意一集进入，不需要补前情。这种结构适合碎片化观看，单集 55—60 分钟，电脑端暂停与回看成本低。</p>
+            <p>《大楼里只有谋杀》第五季则属于连续剧，三季以来形成了固定的角色关系和笑点积累，从第五季中途进入会丢失大量人物动机信息。判断方法很简单：看条目简介中是否出现“每集独立案件”或“本季共 X 集连续故事”。单元剧的豆瓣/IMDb 评分通常更平均，连续剧的评分波动更大但峰值更高。</p>
+
+            <h3>科幻大制作与电脑端观看的适配性</h3>
+            <p>科幻类型是电脑端观看优势最明显的品类。《怪奇物语》第五季的单集制作成本已接近电影级别，暗部细节与特效密度在 27 英寸以上显示器上才能完整呈现。《沙丘：预言》的画面比例接近 2.39:1，电脑端宽屏播放时上下黑边反而增强了沉浸感。</p>
+            <p>对比来看，<strong>科幻剧的“观看门槛”不在剧情理解，而在视觉设备</strong>。如果使用普通笔记本屏幕，建议优先选择剧情驱动型科幻（如《人生复本》《群星》），而非视觉驱动型（如《指环王：力量之戒》）。后者在电脑端小屏上会损失大量场景信息。</p>
+            <ul>
+              <li><strong>视觉驱动型</strong>：《怪奇物语》《沙丘：预言》《指环王：力量之戒》——建议 27 英寸以上屏幕、全屏观看</li>
+              <li><strong>剧情驱动型</strong>：《人生复本》《群星》《暗黑》——屏幕尺寸要求低，适合窗口化边看边查资料</li>
+              <li><strong>混合型</strong>：《最后生还者》《辐射》——既有视觉奇观也有强剧情，建议首刷全屏、二刷窗口化</li>
+            </ul>
+
+            <h3>犯罪纪实改编剧的事实边界</h3>
+            <p>《怪物》系列、《毒枭》系列、《东城梦魇》这类犯罪纪实改编剧，在电脑端观看时常常需要同时查阅案件资料。以《怪物：梅内德斯兄弟》为例，剧集对庭审细节做了戏剧化压缩，真实案件中的“虐待证据”争议在剧中只用了两集呈现。</p>
+            <p>判断这类剧集的“事实含量”可以看三个指标：<strong>是否获得当事人或家属授权</strong>、<strong>编剧是否引用庭审记录</strong>、<strong>片尾是否有资料说明</strong>。《怪物》第三季（艾德·盖恩）已确认未获得家属授权，这意味着剧中的心理动机描写大概率是创作而非事实。电脑端用户可以同时打开维基百科或案件档案页面进行对照，这是移动端难以做到的。</p>
+
+            <h3>限定剧的投入产出比判断</h3>
+            <p>限定剧（Limited Series）在 2026 年的美剧生态中占比明显提升，原因是单季完结、无续订压力、演员档期灵活。对电脑端观众而言，限定剧的核心优势是<strong>时间投入可预期</strong>——通常 6—10 集、每集 45—60 分钟，总时长在 5—10 小时之间。</p>
+            <p>判断一部限定剧是否值得投入，可以看两个具体信号：第一，<strong>是否在播出前就确认“仅此一季”</strong>，如果是，说明制作方对故事完整性有把握；第二，<strong>导演/编剧是否有同类型前作</strong>，例如《驯鹿宝贝》的编剧理查德·加德此前有舞台剧版本，结构更紧凑。相比之下，被“续订后改限定”的剧集（如部分 Netflix 迷你剧）往往结尾仓促。</p>
+
+            <h3>非英语美剧在电脑端的字幕策略</h3>
+            <p>《鱿鱼游戏》第二季、《柏林》第二季、《纸钞屋》衍生剧等非英语剧集在美剧生态中的比重持续上升。电脑端观看时，字幕加载的灵活性远高于电视端——可以同时开启双语字幕、调整字号、或使用浏览器插件实时查词。</p>
+            <p>具体策略上，建议<strong>首刷使用母语字幕，二刷切换英语字幕</strong>。对于《鱿鱼游戏》这类视觉符号密集的剧集，首刷时过度关注字幕会错过画面中的关键提示（如游戏规则卡片上的数字）。电脑端的优势在于可以随时暂停截图，建立自己的“规则对照表”。</p>
+          </div>
+        </section>
+
+        <!-- ===== 6. 体验指南 / 消费路径 ===== -->
+        <section class="section" id="guide">
+          <div class="section-header">
+            <h2>电脑端美剧观看顺序与判断指南</h2>
+          </div>
+          <p class="section-intro">从类型偏好出发，按“先看什么、怎么判断、如何比较”的顺序组织观看路径。</p>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <h3>先确认类型偏好与时间预算</h3>
+              <p>悬疑单元剧（《扑克脸》）适合每天 1 集、单集 60 分钟内；科幻连续剧（《怪奇物语》）适合周末集中 3—4 集。限定剧（《驯鹿宝贝》）总时长 5—7 小时，适合一个周末看完。先定类型再定条目，避免在“看什么”上消耗过多决策时间。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <h3>用具体信号判断条目质量</h3>
+              <p>看三个信号：① 播出平台（HBO/Netflix 的品控基线不同）；② 主创前作（《最后生还者》的克雷格·麦辛有《切尔诺贝利》背书）；③ 续订状态（已确认续订的剧集通常首季结尾更完整）。避免只看评分——单元剧和连续剧的评分不可直接比较。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <h3>类似条目的对比方法</h3>
+              <p>同类型对比看“结构差异”而非“题材差异”。《大楼里只有谋杀》与《扑克脸》都是悬疑+喜剧，但前者是连续角色、后者是单元公路。想轻松跟追选前者，想随时进出选后者。犯罪纪实类则对比“授权状态”与“庭审篇幅占比”，这决定了剧集的事实密度。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 7. FAQ ===== -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <h2>常见问答</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>《怪奇物语》第五季一共几集，电脑端每周几更新？</summary>
+              <div class="faq-answer">第五季共 8 集，分三批上线：11 月 7 日上线前 3 集，11 月 21 日上线第 4—6 集，12 月 26 日上线最后 2 集。电脑端通过 Netflix 网页版观看，更新时间通常为北京时间下午 4 点。</div>
+            </details>
+            <details class="faq-item">
+              <summary>《扑克脸》第二季和第一季有剧情关联吗，需要先看第一季吗？</summary>
+              <div class="faq-answer">关联很弱。每集是独立案件，查理的主角背景在第一季首集交代完毕，第二季仅有两三处台词呼应。直接从第二季任意一集开始看不会影响理解，适合电脑端碎片化观看。</div>
+            </details>
+            <details class="faq-item">
+              <summary>《大楼里只有谋杀》和《扑克脸》都是悬疑喜剧，有什么区别？</summary>
+              <div class="faq-answer">核心区别在结构：《大楼里只有谋杀》是连续剧，三个主角的关系和笑点是追看动力，每季围绕一个命案展开；《扑克脸》是单元剧，每集换一批角色和地点，查理本人不发展长期关系。想追角色选前者，想单集入坑选后者。</div>
+            </details>
+            <details class="faq-item">
+              <summary>《沙丘：预言》没看过电影能直接看吗？</summary>
+              <div class="faq-answer">可以。剧集是电影的前传，时间线早约一万年，核心概念（香料、姐妹会、厄拉科斯）会在前两集通过对话解释。电脑端观看时建议开启字幕，专有名词较多，暂停查阅不影响剧情推进。</div>
+            </details>
+            <details class="faq-item">
+              <summary>犯罪纪实类美剧的事实准确度怎么判断？</summary>
+              <div class="faq-answer">看片尾字幕：有“本剧基于庭审记录与公开报道”且列出具体来源的，事实密度较高；仅写“灵感来自真实事件”的，戏剧化程度更大。另外可以查是否有当事人或家属参与顾问，《怪物：梅内德斯兄弟》没有家属授权，心理描写需谨慎对待。</div>
+            </details>
+            <details class="faq-item">
+              <summary>限定剧和常规剧在电脑端观看体验上有什么实际区别？</summary>
+              <div class="faq-answer">限定剧总时长可预期（通常 6—10 集），适合一次性规划观看；常规剧有续季不确定性和季间等待，适合长期追看。电脑端的实际区别在于：限定剧更适合“周末集中刷完”，常规剧更适合“每周固定时间跟更新”。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ===== 8. 用户评论 ===== -->
+        <section class="section" id="comments">
+          <div class="section-header">
+            <h2>剧迷评论</h2>
+          </div>
+          <div class="comments-list">
+            <div class="comment-item">
+              <div class="comment-avatar">A</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">夜航星</span><span class="comment-date">2026-11-08</span></div>
+                <p class="comment-text">《怪奇物语》第五季第 3 集最后十分钟确实炸，但电脑端看暗部细节有点糊，建议调高屏幕亮度。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">B</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">Maggie看剧</span><span class="comment-date">2026-11-08</span></div>
+                <p class="comment-text">《扑克脸》第二季全季放出太爽了，周末两天刷完 10 集，单元剧结构适合我这种没耐心追长线的人。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">C</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">老张的硬盘</span><span class="comment-date">2026-11-07</span></div>
+                <p class="comment-text">《大楼里只有谋杀》第五季第 4 集梅丽尔出场那段，电脑端暂停看了三遍台词，笑点很密。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">D</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">沙丘迷妹</span><span class="comment-date">2026-11-07</span></div>
+                <p class="comment-text">《沙丘：预言》第 2 集的政治联姻线比第 1 集清晰多了，姐妹会的起源解释得不错，就是节奏偏慢。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">E</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">Limbo_2077</span><span class="comment-date">2026-11-06</span></div>
+                <p class="comment-text">《最后生还者》第二季预告里艾比的选角比预期好，但电脑端看预告片画质压缩严重，等 4K 版再仔细看。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">F</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">追剧不熬夜</span><span class="comment-date">2026-11-06</span></div>
+                <p class="comment-text">《白莲花度假村》第三季定档 12 月 1 日，刚好接在《怪奇物语》完结后，年末档期排得挺好。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">G</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">字幕组小透明</span><span class="comment-date">2026-11-05</span></div>
+                <p class="comment-text">非英语剧集在电脑端开双语字幕确实方便，但《鱿鱼游戏》第二季的韩语敬语层级用英语字幕会丢信息，建议开韩英双语。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">H</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">HBO钉子户</span><span class="comment-date">2026-11-05</span></div>
+                <p class="comment-text">《怪物》第三季换艾德·盖恩题材，感觉比梅内德斯兄弟更黑暗，希望这次能有家属授权。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">I</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">周末刷剧党</span><span class="comment-date">2026-11-04</span></div>
+                <p class="comment-text">《扑克脸》第二季第 7 集那个赌场案件的结构很妙，倒叙开场但误导点埋得深，电脑端回看了两遍才理清。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">J</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">Jasmine_剧评</span><span class="comment-date">2026-11-04</span></div>
+                <p class="comment-text">《黄石》第五季下半部终于要来了，电脑端 Paramount+ 的画质比有线电视好太多，达顿家族的结局值得等。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">K</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">凯文看片</span><span class="comment-date">2026-11-03</span></div>
+                <p class="comment-text">《指环王：力量之戒》第三季开机了，第二季的口碑回暖明显，希望索伦的形态变化能拍得更有层次。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">L</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">Luna的笔记本</span><span class="comment-date">2026-11-03</span></div>
+                <p class="comment-text">《沙丘：预言》用 14 寸笔记本看确实有点浪费，准备接显示器重刷一遍第 1 集。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">M</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">午夜场常客</span><span class="comment-date">2026-11-02</span></div>
+                <p class="comment-text">《驯鹿宝贝》这种限定剧真的适合电脑端一口气看完，7 集加起来不到 6 小时，后劲很大。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">N</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">Nate_看剧笔记</span><span class="comment-date">2026-11-02</span></div>
+                <p class="comment-text">《熊家餐馆》第四季的厨房长镜头在电脑端看依然惊艳，但这一季的客串明星有点多，分散了主线。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">O</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">秋天看美剧</span><span class="comment-date">2026-11-01</span></div>
+                <p class="comment-text">《大楼里只有谋杀》第五季目前 4 集，感觉节奏比第四季好，百老汇背景也让笑点更集中。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">P</div>
+              <div class="comment-body">
+                <div class="comment-head"><span class="comment-nickname">扑克脸的粉丝</span><span class="comment-date">2026-11-01</span></div>
+                <p class="comment-text">《扑克脸》第二季第 2 集的客串是《白莲花》里的那个演员，两部剧的气质莫名很搭。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 9. 相关资讯 ===== -->
+        <section class="section" id="news">
+          <div class="section-header">
+            <h2>相关资讯</h2>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-thumb">
+                <img src="https://picsum.photos/seed/netflix-q4-lineup/600/400" alt="Netflix 第四季度美剧排播表" width="600" height="400" loading="lazy">
+              </div>
+              <div class="news-content">
+                <div class="news-title">Netflix 公布 11 月美剧排播表：《怪奇物语》最终季领衔</div>
+                <div class="news-date">2026-11-07</div>
+                <p class="news-summary">11 月共上线 9 部美剧，除《怪奇物语》第五季外，还包括《外滩探秘》第四季下半部与《林肯律师》第四季。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-thumb">
+                <img src="https://picsum.photos/seed/hbo-2027-slate/600/400" alt="HBO 2027 年剧集规划" width="600" height="400" loading="lazy">
+              </div>
+              <div class="news-content">
+                <div class="news-title">HBO 确认《最后生还者》第二季 2027 年春季档</div>
+                <div class="news-date">2026-11-06</div>
+                <p class="news-summary">与《龙之家族》第三季、《白莲花度假村》第三季共同构成 HBO 未来两年核心剧集矩阵。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-thumb">
+                <img src="https://picsum.photos/seed/limited-series-trend/600/400" alt="限定剧趋势分析" width="600" height="400" loading="lazy">
+              </div>
+              <div class="news-content">
+                <div class="news-title">限定剧占比升至 34%，流媒体平台调整开发策略</div>
+                <div class="news-date">2026-11-05</div>
+                <p class="news-summary">2026 年新上线美剧中限定剧比例较去年提升 8 个百分点，Netflix 与 Hulu 均缩减了多季剧集续订数量。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-thumb">
+                <img src="https://picsum.photos/seed/korean-drama-us/600/400" alt="非英语剧集在美剧生态中的占比" width="600" height="400" loading="lazy">
+              </div>
+              <div class="news-content">
+                <div class="news-title">非英语剧集在美区观看时长占比突破 20%</div>
+                <div class="news-date">2026-11-04</div>
+                <p class="news-summary">《鱿鱼游戏》第二季与《纸钞屋：柏林》第二季推动韩语、西语内容在美剧观众中的渗透率提升。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-thumb">
+                <img src="https://picsum.photos/seed/monster-season3/600/400" alt="怪物第三季艾德盖恩题材" width="600" height="400" loading="lazy">
+              </div>
+              <div class="news-content">
+                <div class="news-title">《怪物》第三季聚焦艾德·盖恩，瑞恩·墨菲继续操刀</div>
+                <div class="news-date">2026-11-03</div>
+                <p class="news-summary">Netflix 确认第三季共 8 集，2027 年上线，与《梅内德斯兄弟》一样未获得当事人家庭直接授权。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="news-thumb">
+                <img src="https://picsum.photos/seed/rings-of-power-s3/600/400" alt="指环王力量之戒第三季开机" width="600" height="400" loading="lazy">
+              </div>
+              <div class="news-content">
+                <div class="news-title">《指环王：力量之戒》第三季英国开机，索伦线加速</div>
+                <div class="news-date">2026-11-02</div>
+                <p class="news-summary">Amazon 确认第三季共 8 集，努门诺尔陷落与精灵三戒的锻造将成为主线，预计 2027 年底上线。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 10. 相关推荐 ===== -->
+        <section class="section" id="related">
+          <div class="section-header">
+            <h2>延伸方向与具体条目</h2>
+          </div>
+          <p class="section-intro">区别于热门推荐，以下指向类型延伸、主创关联或题材相近的具体方向。</p>
+          <div class="related-tags">
+            <a href="/#featured">《人生复本》科幻平行世界</a>
+            <a href="/#featured">《群星》太空悬疑</a>
+            <a href="/#featured">《暗黑》德剧时间循环</a>
+            <a href="/#featured">《东城梦魇》犯罪限定剧</a>
+            <a href="/#featured">《驯鹿宝贝》真实事件改编</a>
+            <a href="/#featured">《熊家餐馆》厨房群像</a>
+            <a href="/#featured">《绝望写手》喜剧双女主</a>
+            <a href="/#featured">《蓝眼武士》动画动作</a>
+          </div>
+        </section>
+
+        <!-- ===== 11. 补充板块：热门榜单 ===== -->
+        <section class="section" id="ranking">
+          <div class="section-header">
+            <h2>本周电脑端热度榜</h2>
+          </div>
+          <p class="section-intro">按 2026 年 11 月 1 日至 11 月 8 日电脑端访问热度排序，数据为示例条目。</p>
+          <div class="ranking-list">
+            <div class="ranking-item">
+              <span class="rank-num">1</span>
+              <span class="rank-name">怪奇物语 第五季</span>
+              <span class="rank-heat">9860</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">2</span>
+              <span class="rank-name">最后生还者 第二季</span>
+              <span class="rank-heat">9420</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">3</span>
+              <span class="rank-name">大楼里只有谋杀 第五季</span>
+              <span class="rank-heat">8930</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">4</span>
+              <span class="rank-name">白莲花度假村 第三季</span>
+              <span class="rank-heat">8710</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">5</span>
+              <span class="rank-name">扑克脸 第二季</span>
+              <span class="rank-heat">8340</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">6</span>
+              <span class="rank-name">沙丘：预言</span>
+              <span class="rank-heat">8120</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">7</span>
+              <span class="rank-name">黄石 第五季下半部</span>
+              <span class="rank-heat">7890</span>
+            </div>
+            <div class="ranking-item">
+              <span class="rank-num">8</span>
+              <span class="rank-name">鱿鱼游戏 第二季</span>
+              <span class="rank-heat">7650</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ===== Right Sidebar ===== -->
+      <aside class="right-sidebar" aria-label="辅助信息">
+        <div class="sidebar-card">
+          <h3>今日更新速览</h3>
+          <ul class="sidebar-list">
+            <li><a href="/#updates">怪奇物语 S5 第 3 集<span class="meta">今天 09:30 · Netflix</span></a></li>
+            <li><a href="/#updates">最后生还者 S2 预告<span class="meta">今天 08:15 · HBO</span></a></li>
+            <li><a href="/#updates">白莲花 S3 定档 12/1<span class="meta">昨天 21:10 · HBO</span></a></li>
+            <li><a href="/#updates">扑克脸 S2 全季上线<span class="meta">昨天 18:40 · Peacock</span></a></li>
+            <li><a href="/#updates">沙丘：预言 第 2 集<span class="meta">11 月 7 日 · HBO Max</span></a></li>
+            <li><a href="/#updates">大楼里只有谋杀 S5E4<span class="meta">11 月 6 日 · Hulu</span></a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>类型快速索引</h3>
+          <ul class="sidebar-list">
+            <li><a href="/#categories">悬疑推理 · 3 部更新中</a></li>
+            <li><a href="/#categories">科幻史诗 · 2 部更新中</a></li>
+            <li><a href="/#categories">犯罪纪实 · 2 部待播</a></li>
+            <li><a href="/#categories">喜剧轻喜 · 4 部在播</a></li>
+            <li><a href="/#categories">限定剧 · 6 部可补</a></li>
+            <li><a href="/#categories">动画美剧 · 2 部新季</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>电脑端观看提示</h3>
+          <ul class="sidebar-list">
+            <li><a href="/#guide">全屏播放优先条目</a></li>
+            <li><a href="/#guide">双语字幕设置方法</a></li>
+            <li><a href="/#guide">单元剧入坑顺序</a></li>
+            <li><a href="/#deep-dive">限定剧时长对照</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">人人美剧电脑版</div>
+          <p>电脑端美剧观看导航与剧集聚合，覆盖悬疑、科幻、犯罪、喜剧、奇幻、剧情六大类型，提供具体条目推荐、更新动态与深度解析。</p>
+        </div>
+        <div class="footer-col">
+          <h4>类型入口</h4>
+          <a href="/#categories">悬疑推理</a>
+          <a href="/#categories">科幻史诗</a>
+          <a href="/#categories">犯罪纪实</a>
+          <a href="/#categories">喜剧轻喜</a>
+        </div>
+        <div class="footer-col">
+          <h4>内容栏目</h4>
+          <a href="/#featured">精选剧集</a>
+          <a href="/#updates">更新动态</a>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#faq">常见问答</a>
+        </div>
+        <div class="footer-col">
+          <h4>社区</h4>
+          <a href="/#comments">剧迷评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#ranking">热度榜单</a>
+          <a href="/#related">延伸推荐</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 人人美剧电脑版 · 内容导航示例</span>
+        <span class="disclaimer">部分内容为示例数据，仅用于展示页面结构</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // Search toggle
+      var searchToggle = document.getElementById('searchToggle');
+      var searchBoxWrap = document.getElementById('searchBoxWrap');
+      var searchClose = document.getElementById('searchClose');
+      var searchInput = document.getElementById('searchInput');
+
+      if (searchToggle && searchBoxWrap) {
+        searchToggle.addEventListener('click', function() {
+          var isActive = searchBoxWrap.classList.toggle('active');
+          searchToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+          if (isActive && searchInput) {
+            setTimeout(function() { searchInput.focus(); }, 50);
+          }
+        });
+      }
+      if (searchClose) {
+        searchClose.addEventListener('click', function() {
+          searchBoxWrap.classList.remove('active');
+          searchToggle.setAttribute('aria-expanded', 'false');
+          if (searchInput) searchInput.value = '';
+          filterCards('');
+        });
+      }
+
+      // Live search filter for featured cards
+      var featuredGrid = document.getElementById('featuredGrid');
+      var originalCards = featuredGrid ? Array.from(featuredGrid.children) : [];
+
+      function filterCards(query) {
+        if (!featuredGrid) return;
+        var q = query.trim().toLowerCase();
+        originalCards.forEach(function(card) {
+          var title = (card.getAttribute('data-title') || '').toLowerCase();
+          var text = card.textContent.toLowerCase();
+          if (!q || title.indexOf(q) !== -1 || text.indexOf(q) !== -1) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          filterCards(searchInput.value);
+        });
+      }
+
+      // Category filter buttons
+      var categoryGrid = document.getElementById('categoryGrid');
+      if (categoryGrid && featuredGrid) {
+        categoryGrid.addEventListener('click', function(e) {
+          var btn = e.target.closest('.category-item');
+          if (!btn) return;
+          var filterType = btn.getAttribute('data-filter');
+          if (!filterType) return;
+
+          // Reset search
+          if (searchInput) searchInput.value = '';
+
+          originalCards.forEach(function(card) {
+            var tags = card.querySelectorAll('.card-type, .card-tags span');
+            var tagText = '';
+            tags.forEach(function(t) { tagText += t.textContent + ' '; });
+            var cardType = card.querySelector('.card-type');
+            var typeText = cardType ? cardType.textContent : '';
+            var combined = typeText + ' ' + tagText;
+
+            if (combined.indexOf(filterType) !== -1) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          // Scroll to featured section
+          var featuredSection = document.getElementById('featured');
+          if (featuredSection) {
+            featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+
+      // Reset filter when clicking "查看全部更新" link or similar
+      var resetLinks = document.querySelectorAll('a[href="/#updates"]');
+      resetLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          originalCards.forEach(function(card) { card.classList.remove('hidden'); });
+          if (searchInput) searchInput.value = '';
+        });
+      });
+
+      // Close search on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchBoxWrap && searchBoxWrap.classList.contains('active')) {
+          searchBoxWrap.classList.remove('active');
+          searchToggle.setAttribute('aria-expanded', 'false');
+          if (searchInput) searchInput.value = '';
+          filterCards('');
+        }
+      });
+    })();
+  </script>
+</body>
+  </html>
