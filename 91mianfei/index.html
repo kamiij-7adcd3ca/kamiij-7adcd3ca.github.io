@@ -1,0 +1,2036 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>91免费观看免费 - 影视聚合与观看指南</title>
+  <meta name="description" content="91免费观看免费聚合电影、剧集、纪录片与综艺条目，提供类型分类、更新动态、深度解析与观看顺序建议，适合想快速筛选免费影视内容的观众。">
+  <meta name="keywords" content="免费影视聚合,电影剧集条目,纪录片综艺,在线观看指南,类型片单">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e1e2f'/%3E%3Cpath d='M9 10h14v12H9z' fill='none' stroke='%23f5c542' stroke-width='2'/%3E%3Cpath d='M12 13l7 3-7 3z' fill='%23f5c542'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --panel: #ffffff;
+      --ink: #1c1c28;
+      --ink-soft: #4a4a5a;
+      --ink-mute: #7a7a8a;
+      --brand: #1e1e2f;
+      --brand-soft: #2d2d44;
+      --accent: #c9a227;
+      --accent-light: #f5e6b8;
+      --line: #e3ded4;
+      --line-strong: #c9c2b4;
+      --radius: 10px;
+      --radius-sm: 6px;
+      --shadow: 0 2px 12px rgba(28, 28, 40, 0.06);
+      --shadow-hover: 0 6px 20px rgba(28, 28, 40, 0.10);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --sticky-height: 96px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-height);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* ---------- 吸顶公告条 + 页头 ---------- */
+    .sticky-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      box-shadow: 0 1px 0 var(--line);
+    }
+
+    .announce-bar {
+      background: var(--brand);
+      color: #f0ede6;
+      font-size: 13px;
+      padding: 8px 16px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+    }
+
+    .announce-bar strong {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .site-header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-height: 64px;
+      flex-wrap: wrap;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .header-nav a {
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      color: var(--ink-soft);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      background: var(--accent-light);
+      color: var(--brand);
+      outline: 2px solid transparent;
+    }
+
+    .header-nav a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .header-search input {
+      width: 180px;
+      padding: 7px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      font-size: 13px;
+      background: var(--bg);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .header-search input:focus {
+      border-color: var(--accent);
+    }
+
+    .header-search button {
+      padding: 7px 14px;
+      border: none;
+      border-radius: 20px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .header-search button:hover {
+      background: var(--brand-soft);
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 55%, #3a3a52 100%);
+      color: #f0ede6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,162,39,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 10%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 48px 20px 44px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      flex: 1 1 520px;
+      min-width: 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--accent-light);
+      border: 1px solid rgba(245,230,184,0.35);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #c9c4b8;
+      max-width: 600px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 26px;
+      background: var(--accent);
+      color: #1c1c28;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 24px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #dbb42e;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 10px 26px;
+      background: transparent;
+      color: #e0dcd2;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-light);
+      color: #fff;
+    }
+
+    .hero-visual {
+      flex: 0 0 340px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+    }
+
+    /* ---------- 主容器 ---------- */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- 三栏门户 ---------- */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 260px;
+      gap: 28px;
+      padding: 32px 0 40px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: calc(var(--sticky-height) + 16px);
+    }
+
+    .channel-index h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      border-radius: var(--radius-sm);
+      transition: background 0.15s, color 0.15s;
+      border-left: 3px solid transparent;
+    }
+
+    .channel-list a:hover,
+    .channel-list a:focus-visible {
+      background: var(--accent-light);
+      color: var(--brand);
+      border-left-color: var(--accent);
+      outline: none;
+    }
+
+    .channel-list a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    /* 中间主内容 */
+    .main-column {
+      min-width: 0;
+    }
+
+    /* 右辅助栏 */
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .side-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .side-panel h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .side-panel ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .side-panel li {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .side-panel li span:first-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .side-panel li .tag {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    /* ---------- 板块通用 ---------- */
+    .section {
+      margin-bottom: 40px;
+      scroll-margin-top: calc(var(--sticky-height) + 8px);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--ink-mute);
+      margin-bottom: 18px;
+      padding-left: 14px;
+    }
+
+    /* 概览文字 */
+    .overview-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .overview-text p {
+      margin-bottom: 12px;
+    }
+
+    .overview-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #e8e4dc;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(30,30,47,0.82);
+      color: #f5e6b8;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+      backdrop-filter: blur(2px);
+    }
+
+    .card-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-body h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .card-tags span {
+      font-size: 11px;
+      background: var(--bg);
+      color: var(--ink-mute);
+      padding: 1px 7px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .card-body p {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      flex: 1;
+      margin-bottom: 8px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--ink-mute);
+      margin-top: auto;
+    }
+
+    .card-meta .score {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .compact-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+
+    .compact-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .compact-list-item:hover {
+      background: #faf8f3;
+    }
+
+    .compact-list-item .idx {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 22px;
+      text-align: center;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .compact-list-item .info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .compact-list-item .info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .compact-list-item .info p {
+      font-size: 12.5px;
+      color: var(--ink-mute);
+      line-height: 1.5;
+    }
+
+    .compact-list-item .time {
+      font-size: 11.5px;
+      color: var(--ink-mute);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .category-item:hover,
+    .category-item:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(201,162,39,0.15);
+      outline: none;
+    }
+
+    .category-item .cat-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .category-item .cat-desc {
+      font-size: 12px;
+      color: var(--ink-mute);
+      line-height: 1.4;
+    }
+
+    /* 深度解析 */
+    .deep-read {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .deep-read h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 22px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .deep-read h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-read p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+    }
+
+    .deep-read ul {
+      margin: 8px 0 14px 20px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+
+    .deep-read li {
+      margin-bottom: 4px;
+    }
+
+    /* 指南分栏 */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .guide-step {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .guide-step .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: var(--accent-light);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .guide-step h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .guide-step p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-list details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-list summary {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+
+    .faq-list details[open] summary::after {
+      content: '−';
+      transform: rotate(0deg);
+    }
+
+    .faq-list summary:hover {
+      background: #faf8f3;
+    }
+
+    .faq-list details[open] summary {
+      border-bottom: 1px solid var(--line);
+      background: #faf8f3;
+    }
+
+    .faq-answer {
+      padding: 14px 18px 16px;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .comment-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .comment-text {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    /* 资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-item:hover {
+      background: #faf8f3;
+    }
+
+    .news-date {
+      font-size: 12px;
+      color: var(--ink-mute);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding-top: 2px;
+      min-width: 76px;
+    }
+
+    .news-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .news-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .news-content p {
+      font-size: 12.5px;
+      color: var(--ink-mute);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .related-tags a {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .related-tags a:hover,
+    .related-tags a:focus-visible {
+      border-color: var(--accent);
+      color: var(--brand);
+      background: #fdf9ee;
+      outline: none;
+    }
+
+    .related-tags a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    /* 热门榜单 */
+    .rank-list {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rank-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent);
+      min-width: 26px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .rank-num.top3 {
+      color: #b8860b;
+      font-size: 17px;
+    }
+
+    .rank-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .rank-info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .rank-info p {
+      font-size: 12px;
+      color: var(--ink-mute);
+    }
+
+    .rank-heat {
+      font-size: 12px;
+      color: var(--ink-mute);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--brand);
+      color: #b8b3a8;
+      margin-top: 16px;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 36px 20px 20px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 28px;
+    }
+
+    .footer-brand {
+      flex: 1 1 220px;
+    }
+
+    .footer-brand .logo-text {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #9a958a;
+      max-width: 280px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e0dcd2;
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-col a {
+      font-size: 12.5px;
+      color: #9a958a;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 16px;
+      font-size: 12px;
+      color: #7a756b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* 空结果 */
+    .no-result {
+      display: none;
+      padding: 24px;
+      text-align: center;
+      color: var(--ink-mute);
+      font-size: 14px;
+    }
+
+    .no-result.show {
+      display: block;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1100px) {
+      .portal-layout {
+        grid-template-columns: 160px minmax(0, 1fr) 230px;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 240px;
+        gap: 24px;
+      }
+      .channel-index {
+        display: none;
+      }
+      .hero-inner {
+        gap: 28px;
+      }
+      .hero-visual {
+        flex: 0 0 260px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .side-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      :root {
+        --sticky-height: 108px;
+      }
+      .header-inner {
+        gap: 12px;
+        padding: 0 14px;
+        min-height: 56px;
+      }
+      .logo-text {
+        font-size: 17px;
+      }
+      .header-nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+        gap: 2px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .header-nav a {
+        font-size: 13px;
+        padding: 5px 10px;
+      }
+      .header-search {
+        margin-left: auto;
+      }
+      .header-search input {
+        width: 120px;
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+      .header-search button {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .hero-inner {
+        padding: 32px 16px 30px;
+      }
+      .hero h1 {
+        font-size: 26px;
+      }
+      .hero-desc {
+        font-size: 14px;
+      }
+      .container {
+        padding: 0 14px;
+      }
+      .portal-layout {
+        padding: 20px 0 30px;
+      }
+      .side-column {
+        grid-template-columns: 1fr;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      .news-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .news-date {
+        min-width: auto;
+      }
+      .footer-links {
+        gap: 28px;
+      }
+      .footer-top {
+        gap: 24px;
+      }
+      .deep-read {
+        padding: 18px 16px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* 筛选状态 */
+    .filter-hidden {
+      display: none !important;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-wrap">
+    <div class="announce-bar">
+      <strong>11 月 8 日更新</strong>：新增《雾港来信》第 6 集、《极地暗流》全 8 集上线、《老友厨房》第三季定档 11 月 15 日
+    </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/#hero" class="logo-block" aria-label="91免费观看免费 首页">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="3" width="20" height="18" rx="3" stroke="#f5c542" stroke-width="1.6"/>
+              <path d="M9 8l6 4-6 4V8z" fill="#f5c542"/>
+            </svg>
+          </span>
+          <span class="logo-text">91免费<span>观看免费</span></span>
+        </a>
+        <nav class="header-nav" aria-label="主题导航">
+          <a href="/#channel-list">电影</a>
+          <a href="/#channel-list">剧集</a>
+          <a href="/#channel-list">纪录片</a>
+          <a href="/#channel-list">综艺</a>
+          <a href="/#channel-list">动画</a>
+          <a href="/#channel-list">悬疑</a>
+          <a href="/#channel-list">喜剧</a>
+          <a href="/#channel-list">科幻</a>
+        </nav>
+        <div class="header-search">
+          <input type="search" id="searchInput" placeholder="搜索条目、类型…" aria-label="搜索影视条目">
+          <button type="button" id="searchBtn">搜索</button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge">内容聚合 · 观看参考</span>
+        <h1>91免费观看免费</h1>
+        <p class="hero-desc">
+          汇集电影、剧集、纪录片与综艺条目，覆盖悬疑、喜剧、科幻、动画等方向，提供类型分类、更新动态、深度解析与观看顺序建议，帮助观众在免费内容中快速找到适合的条目。
+        </p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览精选条目</a>
+          <a href="/#deep-read" class="btn-ghost">查看深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 340 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="300" height="210" rx="12" fill="#2d2d44" stroke="#4a4a5a" stroke-width="1.5"/>
+          <rect x="40" y="50" width="120" height="80" rx="6" fill="#3a3a52"/>
+          <rect x="180" y="50" width="120" height="80" rx="6" fill="#3a3a52"/>
+          <rect x="40" y="145" width="80" height="70" rx="6" fill="#3a3a52"/>
+          <rect x="135" y="145" width="80" height="70" rx="6" fill="#3a3a52"/>
+          <rect x="230" y="145" width="70" height="70" rx="6" fill="#3a3a52"/>
+          <circle cx="100" cy="90" r="18" fill="none" stroke="#c9a227" stroke-width="1.8"/>
+          <path d="M94 84l10 6-10 6V84z" fill="#c9a227"/>
+          <rect x="55" y="165" width="50" height="4" rx="2" fill="#5a5a6a"/>
+          <rect x="55" y="173" width="34" height="3" rx="1.5" fill="#4a4a5a"/>
+          <rect x="150" y="165" width="50" height="4" rx="2" fill="#5a5a6a"/>
+          <rect x="150" y="173" width="34" height="3" rx="1.5" fill="#4a4a5a"/>
+          <rect x="245" y="165" width="40" height="4" rx="2" fill="#5a5a6a"/>
+          <rect x="245" y="173" width="28" height="3" rx="1.5" fill="#4a4a5a"/>
+          <rect x="60" y="70" width="80" height="4" rx="2" fill="#5a5a6a"/>
+          <rect x="60" y="78" width="50" height="3" rx="1.5" fill="#4a4a5a"/>
+          <rect x="200" y="70" width="80" height="4" rx="2" fill="#5a5a6a"/>
+          <rect x="200" y="78" width="50" height="3" rx="1.5" fill="#4a4a5a"/>
+          <rect x="20" y="30" width="300" height="210" rx="12" stroke="#c9a227" stroke-width="1.2" stroke-dasharray="6 4" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区 · 三栏门户 -->
+  <div class="container">
+    <div class="portal-layout">
+
+      <!-- 左频道索引 -->
+      <aside class="channel-index" id="channel-list">
+        <h2>频道索引</h2>
+        <ul class="channel-list">
+          <li><a href="/#featured">电影精选</a></li>
+          <li><a href="/#featured">剧集热播</a></li>
+          <li><a href="/#featured">纪录片</a></li>
+          <li><a href="/#featured">综艺节目</a></li>
+          <li><a href="/#featured">动画番剧</a></li>
+          <li><a href="/#category">悬疑推理</a></li>
+          <li><a href="/#category">喜剧生活</a></li>
+          <li><a href="/#category">科幻奇幻</a></li>
+          <li><a href="/#category">历史人文</a></li>
+          <li><a href="/#category">自然地理</a></li>
+          <li><a href="/#category">竞技真人秀</a></li>
+          <li><a href="/#rank">热门榜单</a></li>
+        </ul>
+      </aside>
+
+      <!-- 中间主内容 -->
+      <main class="main-column">
+
+        <!-- 1. 主题领域概览 -->
+        <section class="section" id="overview">
+          <h2 class="section-title">影视内容聚合概览</h2>
+          <p class="section-sub">当前可关注的条目方向与类型分布</p>
+          <div class="overview-text">
+            <p>影视内容聚合围绕电影、剧集、纪录片、综艺和动画五大载体展开，每个载体下又按题材细分出悬疑、喜剧、科幻、历史、自然等方向。近期值得留意的条目包括悬疑剧《雾港来信》、科幻电影《极地暗流》、美食纪录片《老友厨房》第三季以及动画《星轨列车》第二季。这些内容在更新节奏、单集时长和叙事密度上各有差异。</p>
+            <p>免费观看场景下，观众面对的核心选择往往是：先看哪一类、单集投入多少时间、系列条目是否需要按顺序补齐。悬疑类适合连续追看，单集 45—55 分钟；纪录片单集 25—40 分钟，适合碎片时间；综艺以周更为主，单集 60—90 分钟；动画番剧单集 24 分钟，补番成本较低。了解这些差异有助于快速判断一部条目是否匹配当下的观看条件。</p>
+            <p>类型混合是当前条目的常见特征，例如悬疑加家庭、科幻加公路、纪录片加美食旅行。判断一部混合类型条目是否值得投入，可以优先看它的主类型是否扎实，再看辅助类型是否提供了额外信息而不是稀释主线。以下板块围绕具体条目、更新动态、分类入口和观看顺序展开，每条信息都指向可搜索、可核对的条目名称。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section" id="featured">
+          <h2 class="section-title">精选内容推荐</h2>
+          <p class="section-sub">近期可观看的具体条目与看点</p>
+          <div class="card-grid" id="featuredGrid">
+
+            <article class="card" data-title="雾港来信 悬疑剧集">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/wugang-laixin01/400/300" alt="雾港来信悬疑剧集封面" width="400" height="300" loading="lazy">
+                <span class="card-badge">悬疑</span>
+              </div>
+              <div class="card-body">
+                <h3>雾港来信</h3>
+                <div class="card-tags"><span>悬疑</span><span>家庭</span><span>周更</span></div>
+                <p>一封迟到二十年的信件牵出港口小城旧案，单集 48 分钟，适合连续追看。</p>
+                <div class="card-meta"><span>更新至 6 集</span><span class="score">8.4</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="极地暗流 科幻电影">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/jidi-anliu02/400/300" alt="极地暗流科幻电影剧照" width="400" height="300" loading="lazy">
+                <span class="card-badge">科幻</span>
+              </div>
+              <div class="card-body">
+                <h3>极地暗流</h3>
+                <div class="card-tags"><span>科幻</span><span>冒险</span><span>全 8 集</span></div>
+                <p>南极科考站遭遇异常磁场，科考队员必须在 72 小时内撤离，节奏紧凑。</p>
+                <div class="card-meta"><span>全 8 集上线</span><span class="score">8.1</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="老友厨房 美食纪录片">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/laoyou-chufang03/400/300" alt="老友厨房美食纪录片封面" width="400" height="300" loading="lazy">
+                <span class="card-badge">纪录片</span>
+              </div>
+              <div class="card-body">
+                <h3>老友厨房 第三季</h3>
+                <div class="card-tags"><span>美食</span><span>人文</span><span>周更</span></div>
+                <p>三位老友经营社区小馆，每集一道家常菜搭配一段街坊故事，单集 30 分钟。</p>
+                <div class="card-meta"><span>11 月 15 日定档</span><span class="score">9.0</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="星轨列车 动画番剧">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/xinggui-lieche04/400/300" alt="星轨列车动画番剧封面" width="400" height="300" loading="lazy">
+                <span class="card-badge">动画</span>
+              </div>
+              <div class="card-body">
+                <h3>星轨列车 第二季</h3>
+                <div class="card-tags"><span>动画</span><span>科幻</span><span>季更</span></div>
+                <p>穿越星海的列车载着不同乘客的愿望，第二季新增三站，单集 24 分钟。</p>
+                <div class="card-meta"><span>更新至第 4 集</span><span class="score">8.7</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="街角侦探社 喜剧悬疑">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/jiejiao-zhentan05/400/300" alt="街角侦探社喜剧悬疑剧照" width="400" height="300" loading="lazy">
+                <span class="card-badge">喜剧</span>
+              </div>
+              <div class="card-body">
+                <h3>街角侦探社</h3>
+                <div class="card-tags"><span>喜剧</span><span>悬疑</span><span>已完结</span></div>
+                <p>开在便利店二楼的侦探社专接邻里小案，每集 35 分钟，轻松下饭。</p>
+                <div class="card-meta"><span>全 12 集可看</span><span class="score">7.9</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="岩层之下 自然纪录片">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/yanceng-zhixia06/400/300" alt="岩层之下自然纪录片封面" width="400" height="300" loading="lazy">
+                <span class="card-badge">纪录片</span>
+              </div>
+              <div class="card-body">
+                <h3>岩层之下</h3>
+                <div class="card-tags"><span>自然</span><span>地理</span><span>全 6 集</span></div>
+                <p>深入喀斯特地貌与地下暗河，每集聚焦一种地质奇观，单集 40 分钟。</p>
+                <div class="card-meta"><span>全 6 集上线</span><span class="score">9.1</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="周末大挑战 竞技综艺">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/zhoumo-tiaozhan07/400/300" alt="周末大挑战竞技综艺封面" width="400" height="300" loading="lazy">
+                <span class="card-badge">综艺</span>
+              </div>
+              <div class="card-body">
+                <h3>周末大挑战</h3>
+                <div class="card-tags"><span>竞技</span><span>真人秀</span><span>周更</span></div>
+                <p>六组选手在废弃工厂完成限时任务，第三期加入夜间追逐环节。</p>
+                <div class="card-meta"><span>更新至第 5 期</span><span class="score">7.6</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="回声档案 悬疑剧集">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/huisheng-dangan08/400/300" alt="回声档案悬疑剧集封面" width="400" height="300" loading="lazy">
+                <span class="card-badge">悬疑</span>
+              </div>
+              <div class="card-body">
+                <h3>回声档案</h3>
+                <div class="card-tags"><span>悬疑</span><span>刑侦</span><span>已完结</span></div>
+                <p>旧案录音带里出现不属于当年的声音，全 10 集，适合一次性看完。</p>
+                <div class="card-meta"><span>全 10 集可看</span><span class="score">8.3</span></div>
+              </div>
+            </article>
+
+          </div>
+          <div class="no-result" id="noResult">没有找到匹配的条目，试试其他关键词。</div>
+        </section>
+
+        <!-- 3. 最新更新 / 热播动态 -->
+        <section class="section" id="latest">
+          <h2 class="section-title">最新更新与热播动态</h2>
+          <p class="section-sub">近 30 天内的条目变动与上线信息</p>
+          <div class="compact-list">
+            <div class="compact-list-item">
+              <span class="idx">01</span>
+              <div class="info">
+                <h4>雾港来信 第 6 集上线</h4>
+                <p>信件线索指向港务局旧仓库，主角首次进入地下通道。</p>
+              </div>
+              <span class="time">今天 09:30</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">02</span>
+              <div class="info">
+                <h4>极地暗流 全 8 集一次性放出</h4>
+                <p>科考站撤离行动进入倒计时，后四集聚焦冰下异常信号。</p>
+              </div>
+              <span class="time">昨天 21:10</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">03</span>
+              <div class="info">
+                <h4>老友厨房 第三季定档 11 月 15 日</h4>
+                <p>首期嘉宾为社区面馆老板，菜单包含红烧肉与雪菜面。</p>
+              </div>
+              <span class="time">11 月 7 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">04</span>
+              <div class="info">
+                <h4>星轨列车 第二季第 4 集更新</h4>
+                <p>新乘客带来一枚会唱歌的齿轮，列车驶入雨幕星域。</p>
+              </div>
+              <span class="time">11 月 6 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">05</span>
+              <div class="info">
+                <h4>岩层之下 第 5 集：地下暗河</h4>
+                <p>摄制组跟随水文队进入未开放溶洞，记录盲鱼种群。</p>
+              </div>
+              <span class="time">11 月 5 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">06</span>
+              <div class="info">
+                <h4>周末大挑战 第 5 期夜间追逐</h4>
+                <p>选手在废弃工厂三层之间转移，限时 40 分钟。</p>
+              </div>
+              <span class="time">11 月 4 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">07</span>
+              <div class="info">
+                <h4>街角侦探社 番外篇上线</h4>
+                <p>便利店店长视角的 12 分钟短片，补充主线未交代的细节。</p>
+              </div>
+              <span class="time">11 月 3 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">08</span>
+              <div class="info">
+                <h4>回声档案 导演评论音轨更新</h4>
+                <p>第 1、2 集加入案件原型说明，时长约 45 分钟。</p>
+              </div>
+              <span class="time">11 月 2 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">09</span>
+              <div class="info">
+                <h4>星轨列车 第一季限时重播</h4>
+                <p>第一季 12 集重新上线，可配合第二季补看。</p>
+              </div>
+              <span class="time">11 月 1 日</span>
+            </div>
+            <div class="compact-list-item">
+              <span class="idx">10</span>
+              <div class="info">
+                <h4>岩层之下 拍摄手记发布</h4>
+                <p>摄影团队记录地下 120 米处的照明方案与安全措施。</p>
+              </div>
+              <span class="time">10 月 30 日</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section" id="category">
+          <h2 class="section-title">分类入口</h2>
+          <p class="section-sub">按类型定位条目，点击筛选或跳转</p>
+          <div class="category-grid" id="categoryGrid">
+            <button class="category-item" data-filter="悬疑">
+              <span class="cat-name">悬疑推理</span>
+              <span class="cat-desc">雾港来信、回声档案、街角侦探社</span>
+            </button>
+            <button class="category-item" data-filter="喜剧">
+              <span class="cat-name">喜剧生活</span>
+              <span class="cat-desc">街角侦探社、老友厨房</span>
+            </button>
+            <button class="category-item" data-filter="科幻">
+              <span class="cat-name">科幻奇幻</span>
+              <span class="cat-desc">极地暗流、星轨列车</span>
+            </button>
+            <button class="category-item" data-filter="纪录片">
+              <span class="cat-name">纪录片</span>
+              <span class="cat-desc">岩层之下、老友厨房</span>
+            </button>
+            <button class="category-item" data-filter="美食">
+              <span class="cat-name">美食人文</span>
+              <span class="cat-desc">老友厨房第三季</span>
+            </button>
+            <button class="category-item" data-filter="竞技">
+              <span class="cat-name">竞技真人秀</span>
+              <span class="cat-desc">周末大挑战</span>
+            </button>
+            <button class="category-item" data-filter="动画">
+              <span class="cat-name">动画番剧</span>
+              <span class="cat-desc">星轨列车第二季</span>
+            </button>
+            <button class="category-item" data-filter="自然">
+              <span class="cat-name">自然地理</span>
+              <span class="cat-desc">岩层之下、极地暗流</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析正文 -->
+        <section class="section" id="deep-read">
+          <h2 class="section-title">深度解析：类型差异与观看判断</h2>
+          <p class="section-sub">悬疑、科幻、纪录片与综艺的投入方式比较</p>
+          <div class="deep-read">
+            <h3>悬疑剧集的叙事密度与追看节奏</h3>
+            <p>悬疑剧通常以单集 45—55 分钟、全季 8—12 集的规格出现。像《雾港来信》这类周更条目，每集结尾设置一个钩子，适合按周追看并参与讨论；而《回声档案》全 10 集一次性放出，更适合在周末连续看完，避免线索断裂。判断一部悬疑剧是否值得投入，可以先看前两集是否建立了清晰的时间线和人物关系，再看第三集是否开始回收伏笔。如果前三集仍在铺陈新线索而没有推进主线，后续节奏往往偏慢。</p>
+            <h3>科幻条目的设定门槛与观看顺序</h3>
+            <p>科幻类条目在免费内容中常见两种形态：一种是《极地暗流》式的限定剧，全 8 集围绕一个核心事件展开，设定集中在前两集交代，之后进入推进阶段；另一种是《星轨列车》式的单元剧，每集或每两集一个独立场景，适合跳看，但跳看会错过乘客之间的暗线。对于单元式科幻动画，建议先看第 1 集确认画风和叙事节奏，再从第 3 集开始按顺序补，因为第 2 集通常是世界观展开集，信息密度较高。</p>
+            <h3>纪录片的单集结构与碎片观看</h3>
+            <p>纪录片在免费观看场景中具有明显的碎片化优势。《岩层之下》单集 40 分钟，每集聚焦一个地质主题，第 1 集讲喀斯特溶洞，第 4 集讲地下暗河，单集独立性强，可以从任意一集进入。《老友厨房》第三季单集 30 分钟，以一道菜带出一段人物关系，适合在吃饭时观看。比较两类纪录片时，前者看重摄影与信息量，后者看重人物与生活感，选择哪一类取决于当下是想获取知识还是放松情绪。</p>
+            <h3>综艺的周更节奏与补看策略</h3>
+            <p>竞技类综艺如《周末大挑战》以周更为主，单期 60—90 分钟，每期包含 2—3 个任务环节。补看时建议先看第 1 期了解选手分组和规则，之后可以按兴趣挑选任务类型，但连续观看能保留选手之间的互动线索。与剧集不同，综艺的淘汰和晋级结果会改变后续观看预期，因此如果打算长期追看，按顺序观看的收益更高。美食人文类纪录片与竞技综艺的差别在于，前者不依赖结果悬念，单集可独立消费，后者依赖赛制推进，顺序观看更完整。</p>
+            <h3>混合类型条目的判断方法</h3>
+            <ul>
+              <li>先确认主类型：例如《街角侦探社》以喜剧为主、悬疑为辅，如果期待硬核推理可能会失望，但作为下饭剧节奏合适。</li>
+              <li>再看辅助类型是否提供增量信息：美食纪录片中的旅行元素、科幻剧中的家庭关系，如果这些元素服务于主线，通常值得投入。</li>
+              <li>最后看单集时长与更新方式：周更条目需要持续投入时间，一次性放出的条目适合集中消费，根据个人时间安排选择。</li>
+            </ul>
+            <p>以上判断方法不依赖平台数据，只看条目自身的类型构成和播出节奏。对于免费观看场景，先明确自己能投入的连续时间，再按类型匹配条目，通常比盲目打开一部新剧更有效率。</p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 / 消费路径 -->
+        <section class="section" id="guide">
+          <h2 class="section-title">体验指南：内容消费的顺序与判断</h2>
+          <p class="section-sub">从类型选择到单集评估的四个步骤</p>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <h4>先确定可投入的连续时间</h4>
+              <p>如果只有 30 分钟以内的碎片时间，优先选《老友厨房》或《岩层之下》的单集；如果有整块两小时，可以考虑《极地暗流》的前三集或《回声档案》的前四集。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <h4>按主类型筛选条目</h4>
+              <p>悬疑优先看《雾港来信》《回声档案》，科幻优先看《极地暗流》《星轨列车》，美食人文优先看《老友厨房》，竞技优先看《周末大挑战》。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <h4>用前两集判断叙事质量</h4>
+              <p>剧集类看前两集是否建立清晰的人物动机和时间线；纪录片看第一集是否提供了具体的地理或人物信息；综艺看第一期规则是否清楚。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">4</span>
+              <h4>比较同类条目的投入产出</h4>
+              <p>同为悬疑剧，《雾港来信》周更适合追看，《回声档案》已完结适合集中补。同为纪录片，《岩层之下》重知识密度，《老友厨房》重生活感，按当下需求选择。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section" id="faq">
+          <h2 class="section-title">常见问题</h2>
+          <p class="section-sub">围绕条目类型与观看顺序的具体问答</p>
+          <div class="faq-list">
+            <details>
+              <summary>悬疑剧《雾港来信》一般多久更新一集？</summary>
+              <div class="faq-answer">《雾港来信》采用周更模式，目前更新至第 6 集，每集间隔一周，单集 48 分钟。适合按周追看并记录线索。</div>
+            </details>
+            <details>
+              <summary>《极地暗流》和《星轨列车》都是科幻，有什么区别？</summary>
+              <div class="faq-answer">《极地暗流》是限定剧，全 8 集围绕南极科考站撤离事件，设定集中、节奏紧凑；《星轨列车》是单元式动画，每集一个乘客故事，适合跳看但会错过暗线。前者适合连续看完，后者适合碎片时间。</div>
+            </details>
+            <details>
+              <summary>第一次看纪录片，从《岩层之下》哪一集开始比较好？</summary>
+              <div class="faq-answer">建议从第 1 集喀斯特溶洞开始，这一集对地质概念的解释最完整；如果对地下暗河更感兴趣，可以直接看第 4 集，单集独立性较强。</div>
+            </details>
+            <details>
+              <summary>《老友厨房》第三季什么时候上线？</summary>
+              <div class="faq-answer">《老友厨房》第三季定档 2026 年 11 月 15 日，首期嘉宾为社区面馆老板，单集 30 分钟，周更。</div>
+            </details>
+            <details>
+              <summary>悬疑类条目的评判标准通常看什么？</summary>
+              <div class="faq-answer">通常看三点：前两集是否建立清晰的时间线和人物动机、第三集是否开始回收伏笔、单集结尾是否提供有效的推进信息。如果前三集仍在铺陈新线索而没有主线推进，后续节奏通常偏慢。</div>
+            </details>
+            <details>
+              <summary>《周末大挑战》可以跳着看吗？</summary>
+              <div class="faq-answer">可以，但建议先看第 1 期了解选手分组和赛制，之后按任务类型挑选。如果打算长期追看，按顺序观看的收益更高，因为淘汰和晋级结果会影响后续预期。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section" id="comments">
+          <h2 class="section-title">用户评论</h2>
+          <p class="section-sub">来自观众的条目反馈与类型讨论</p>
+          <div class="comment-grid">
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">林</span><span class="comment-name">林间雾</span></div><p class="comment-text">《雾港来信》第 6 集地下通道那段拍得不错，但前两集线索给得太密，我回看了两遍才理清。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">陈</span><span class="comment-name">陈默</span></div><p class="comment-text">《极地暗流》全 8 集一口气看完，第 5 集之后节奏明显加快，冰下异常信号那段比前面精彩。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">苏</span><span class="comment-name">苏打水</span></div><p class="comment-text">《老友厨房》前两季都看了，第三季定档 11 月 15 日，希望还是原来的配方，红烧肉那期印象最深。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">周</span><span class="comment-name">周周</span></div><p class="comment-text">《星轨列车》第二季第 4 集那个会唱歌的齿轮设定太妙了，单集 24 分钟刚好配午饭。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">吴</span><span class="comment-name">吴桐</span></div><p class="comment-text">《街角侦探社》当喜剧看很轻松，推理部分别太认真，适合下饭，便利店二楼那个场景很有生活感。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">郑</span><span class="comment-name">郑一</span></div><p class="comment-text">《岩层之下》第 4 集地下暗河拍得真好，盲鱼那段我反复看了三遍，摄影比很多电影都讲究。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">何</span><span class="comment-name">何小满</span></div><p class="comment-text">《周末大挑战》第 5 期夜间追逐有点乱，剪辑跳得厉害，前几期任务设计更清楚。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">黄</span><span class="comment-name">黄雀</span></div><p class="comment-text">《回声档案》全 10 集一次看完很过瘾，录音带里出现不属于当年的声音这个设定很抓人。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">赵</span><span class="comment-name">赵拾</span></div><p class="comment-text">科幻类还是喜欢《极地暗流》这种限定剧，不拖沓，8 集讲完一个故事，比注水的长剧好。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">钱</span><span class="comment-name">钱多多</span></div><p class="comment-text">《老友厨房》第三季定档了，但我更期待《岩层之下》出第二季，地质类纪录片太少了。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">孙</span><span class="comment-name">孙山</span></div><p class="comment-text">《雾港来信》和《回声档案》都是悬疑，但风格差别很大，前者偏家庭情感，后者偏刑侦，按心情选。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">李</span><span class="comment-name">李子树</span></div><p class="comment-text">《星轨列车》第一季限时重播正好补看，之前从第二季开始看，有些乘客背景没搞懂。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">王</span><span class="comment-name">王不留</span></div><p class="comment-text">《街角侦探社》番外篇 12 分钟挺有意思，从店长视角补了一些主线没交代的细节。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">张</span><span class="comment-name">张望</span></div><p class="comment-text">《周末大挑战》第三期夜间环节比这一期好，希望下一期任务设计能回归前几期的水平。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">刘</span><span class="comment-name">刘一舟</span></div><p class="comment-text">免费内容里《岩层之下》的质量算很高的，每集 40 分钟信息量足，适合周末下午看。</p></div>
+            <div class="comment-card"><div class="comment-head"><span class="comment-avatar">徐</span><span class="comment-name">徐慢慢</span></div><p class="comment-text">《极地暗流》前两集设定交代得有点慢，不过从第 3 集开始就好看了，坚持过前两集值得。</p></div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section" id="news">
+          <h2 class="section-title">相关资讯</h2>
+          <p class="section-sub">近期条目上线与类型动态</p>
+          <div class="news-list">
+            <div class="news-item">
+              <span class="news-date">2026-11-08</span>
+              <div class="news-content">
+                <h4>《雾港来信》第 6 集上线，信件线索指向港务局旧仓库</h4>
+                <p>本集揭开主角父亲当年工作的仓库位置，地下通道场景为后续剧情埋下关键线索。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-07</span>
+              <div class="news-content">
+                <h4>《极地暗流》全 8 集一次性放出，科幻限定剧再添一部</h4>
+                <p>该剧围绕南极科考站异常磁场事件，后四集聚焦冰下信号和撤离倒计时。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-06</span>
+              <div class="news-content">
+                <h4>《老友厨房》第三季定档 11 月 15 日，首期嘉宾公布</h4>
+                <p>首期嘉宾为社区面馆老板，菜单包含红烧肉与雪菜面，延续前两季的家常菜路线。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-05</span>
+              <div class="news-content">
+                <h4>《岩层之下》第 5 集记录地下暗河，盲鱼种群首次入镜</h4>
+                <p>摄制组跟随水文队进入未开放溶洞，单集 40 分钟，重点展示地下河生态系统。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-03</span>
+              <div class="news-content">
+                <h4>《街角侦探社》番外篇上线，便利店店长视角补全主线</h4>
+                <p>12 分钟短片补充主线未交代的细节，适合看完正片后补看。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-01</span>
+              <div class="news-content">
+                <h4>《星轨列车》第一季限时重播，配合第二季补看</h4>
+                <p>第一季 12 集重新上线，观众可在第二季更新间隙补齐乘客背景信息。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section" id="related">
+          <h2 class="section-title">相关推荐</h2>
+          <p class="section-sub">延伸方向与具体条目索引</p>
+          <div class="related-tags">
+            <a href="/#featured">雾港来信 家庭悬疑线</a>
+            <a href="/#featured">极地暗流 限定剧模式</a>
+            <a href="/#featured">老友厨房 美食人文</a>
+            <a href="/#featured">星轨列车 单元式动画</a>
+            <a href="/#featured">回声档案 刑侦旧案</a>
+            <a href="/#featured">岩层之下 地质纪录片</a>
+            <a href="/#featured">周末大挑战 竞技赛制</a>
+            <a href="/#featured">街角侦探社 轻喜剧</a>
+          </div>
+        </section>
+
+        <!-- 11. 热门榜单 -->
+        <section class="section" id="rank">
+          <h2 class="section-title">热门榜单</h2>
+          <p class="section-sub">近 30 天条目关注度排序</p>
+          <div class="rank-list">
+            <div class="rank-item">
+              <span class="rank-num top3">01</span>
+              <div class="rank-info"><h4>雾港来信</h4><p>悬疑剧集 · 更新至第 6 集</p></div>
+              <span class="rank-heat">9.2 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num top3">02</span>
+              <div class="rank-info"><h4>极地暗流</h4><p>科幻限定剧 · 全 8 集</p></div>
+              <span class="rank-heat">8.7 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num top3">03</span>
+              <div class="rank-info"><h4>老友厨房 第三季</h4><p>美食纪录片 · 定档 11 月 15 日</p></div>
+              <span class="rank-heat">7.9 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">04</span>
+              <div class="rank-info"><h4>星轨列车 第二季</h4><p>科幻动画 · 更新至第 4 集</p></div>
+              <span class="rank-heat">7.1 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">05</span>
+              <div class="rank-info"><h4>回声档案</h4><p>悬疑刑侦 · 全 10 集</p></div>
+              <span class="rank-heat">6.5 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">06</span>
+              <div class="rank-info"><h4>岩层之下</h4><p>自然纪录片 · 全 6 集</p></div>
+              <span class="rank-heat">6.0 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">07</span>
+              <div class="rank-info"><h4>周末大挑战</h4><p>竞技综艺 · 更新至第 5 期</p></div>
+              <span class="rank-heat">5.2 万</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">08</span>
+              <div class="rank-info"><h4>街角侦探社</h4><p>喜剧悬疑 · 全 12 集</p></div>
+              <span class="rank-heat">4.8 万</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="side-column">
+        <div class="side-panel">
+          <h3>今日更新速览</h3>
+          <ul>
+            <li><span>雾港来信 第 6 集</span><span class="tag">已上线</span></li>
+            <li><span>极地暗流 全 8 集</span><span class="tag">已上线</span></li>
+            <li><span>老友厨房 第三季</span><span class="tag">11-15</span></li>
+            <li><span>星轨列车 第 4 集</span><span class="tag">已上线</span></li>
+            <li><span>岩层之下 第 5 集</span><span class="tag">已上线</span></li>
+          </ul>
+        </div>
+        <div class="side-panel">
+          <h3>类型速查</h3>
+          <ul>
+            <li><span>悬疑推理</span><span class="tag">3 部</span></li>
+            <li><span>科幻奇幻</span><span class="tag">2 部</span></li>
+            <li><span>美食人文</span><span class="tag">1 部</span></li>
+            <li><span>自然地理</span><span class="tag">1 部</span></li>
+            <li><span>竞技真人秀</span><span class="tag">1 部</span></li>
+            <li><span>动画番剧</span><span class="tag">1 部</span></li>
+          </ul>
+        </div>
+        <div class="side-panel">
+          <h3>近 7 天条目变动</h3>
+          <ul>
+            <li><span>新增剧集</span><span class="tag">2 部</span></li>
+            <li><span>全季上线</span><span class="tag">1 部</span></li>
+            <li><span>定档预告</span><span class="tag">1 部</span></li>
+            <li><span>番外更新</span><span class="tag">1 条</span></li>
+            <li><span>评论音轨</span><span class="tag">1 条</span></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">91免费<span style="color: var(--accent);">观看免费</span></div>
+          <p>聚合电影、剧集、纪录片与综艺条目，提供类型分类、更新动态与观看顺序参考。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>内容类型</h4>
+            <ul>
+              <li><a href="/#featured">电影精选</a></li>
+              <li><a href="/#featured">剧集热播</a></li>
+              <li><a href="/#featured">纪录片</a></li>
+              <li><a href="/#featured">综艺节目</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>类型方向</h4>
+            <ul>
+              <li><a href="/#category">悬疑推理</a></li>
+              <li><a href="/#category">科幻奇幻</a></li>
+              <li><a href="/#category">美食人文</a></li>
+              <li><a href="/#category">自然地理</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>参考内容</h4>
+            <ul>
+              <li><a href="/#deep-read">深度解析</a></li>
+              <li><a href="/#guide">体验指南</a></li>
+              <li><a href="/#faq">常见问题</a></li>
+              <li><a href="/#rank">热门榜单</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 91免费观看免费 · 内容聚合示例</span>
+        <span>部分内容为示例数据，仅用于展示页面结构</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var featuredGrid = document.getElementById('featuredGrid');
+      var noResult = document.getElementById('noResult');
+      var cards = featuredGrid ? featuredGrid.querySelectorAll('.card') : [];
+      var categoryGrid = document.getElementById('categoryGrid');
+
+      function normalize(str) {
+        return (str || '').toLowerCase().replace(/\s+/g, '');
+      }
+
+      function filterCards(query) {
+        var q = normalize(query);
+        var visibleCount = 0;
+
+        cards.forEach(function(card) {
+          var title = card.getAttribute('data-title') || '';
+          var text = normalize(card.textContent + ' ' + title);
+          var match = !q || text.indexOf(q) !== -1;
+          card.classList.toggle('filter-hidden', !match);
+          if (match) visibleCount++;
+        });
+
+        if (noResult) {
+          noResult.classList.toggle('show', visibleCount === 0 && q.length > 0);
+        }
+      }
+
+      function resetFilter() {
+        cards.forEach(function(card) {
+          card.classList.remove('filter-hidden');
+        });
+        if (noResult) noResult.classList.remove('show');
+        if (searchInput) searchInput.value = '';
+      }
+
+      if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', function() {
+          filterCards(searchInput.value.trim());
+        });
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            filterCards(searchInput.value.trim());
+          }
+        });
+        searchInput.addEventListener('input', function() {
+          if (searchInput.value.trim() === '') {
+            resetFilter();
+          }
+        });
+      }
+
+      // 分类筛选：按标签过滤精选卡片
+      if (categoryGrid) {
+        var categoryBtns = categoryGrid.querySelectorAll('.category-item');
+        categoryBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var filter = btn.getAttribute('data-filter') || '';
+            if (!filter) return;
+            resetFilter();
+            var count = 0;
+            cards.forEach(function(card) {
+              var text = normalize(card.textContent + ' ' + (card.getAttribute('data-title') || ''));
+              var match = text.indexOf(normalize(filter)) !== -1;
+              card.classList.toggle('filter-hidden', !match);
+              if (match) count++;
+            });
+            if (noResult) {
+              noResult.classList.toggle('show', count === 0);
+              if (count === 0) noResult.textContent = '该分类下暂无匹配条目，试试其他分类。';
+            }
+            // 滚动到精选区域
+            var featuredSection = document.getElementById('featured');
+            if (featuredSection) {
+              featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+            </html>
